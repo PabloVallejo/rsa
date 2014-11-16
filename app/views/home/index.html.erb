@@ -1,1 +1,85 @@
-<h1>This is home </h1>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">RSA <small> • Simple RSA implementation</small></h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              <li class="active"><a href="#">View On GitHub</a></li>
+              <li><a href="#">Ruby Gem</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="inner cover clearfix">
+
+      	<div class="col-sm-6 text-left">
+					<div class="form-group">
+						<h4>Message</h4>
+						<input type="text" class="js-message form-control input-lg">
+					</div>
+
+					<div class="form-group">
+						<div class="highlight">
+							<h4>Encripted</h4>
+							<h2 class="js-encrypted"></h2>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="highlight success">
+							<h4>Decrypted</h4>
+							<h2 class="js-decrypted"></h2>
+						</div>
+					</div>
+
+      	</div>
+
+      	<div class="col-sm-6 text-right">
+
+      		<div class="form-group">
+						<h4>Public keys</h4>
+						<h4>
+							e:
+							<span class="text-muted js-public-key-e"><%= @rsa.instance_variable_get('@e') %></span>
+						</h4>
+						<h4>
+							n: <span class="text-muted js-public-key-n"><%= @rsa.instance_variable_get('@n') %></span>
+						</h4>
+					</div>
+
+					<div class="form-group">
+						<h4>Relevant variables</h4>
+						<h4>
+							z: <span class="text-muted"><%= @rsa.instance_variable_get('@z') %></span>
+						</h4>
+						<h4>
+							d: <span class="text-muted"><%= @rsa.instance_variable_get('@d') %></span>
+						</h4>
+
+					</div>
+      	</div>
+
+      </div>
+
+      <div class="mastfoot">
+        <div class="inner">
+          <p>RSA Example </a> by <a href="https://github.com/PabloVallejo">Pablo Vallejo</a></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Additional data -->
+<script>
+	var jsonString = '<%= @rsa.to_json.html_safe -%>';
+	var rsaAttributes;
+	if ( jsonString ) {
+		rsaAttributes = JSON.parse(jsonString);
+	}
+</script>

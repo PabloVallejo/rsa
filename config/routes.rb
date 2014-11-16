@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  # Encrypt and decrypt message.
+  post 'home/encrypt-decrypt' => 'home#encrypt_decrypt'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -21,7 +21,8 @@ module Rsa
     # config.i18n.default_locale = :de
 
     # Include bower components in compiled assets.
-    config.assets.paths << Rails.root.join('app', 'assets', 'bower_components')
-
+    # config.assets.paths << Rails.root.join('app', 'assets', 'bower_components')
+    # config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
   end
 end

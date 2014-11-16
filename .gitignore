@@ -16,4 +16,4 @@
 /tmp
 
 # Ignore bower components.
-app/assets/bower_components
+vendor/assets/components
