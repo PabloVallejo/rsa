@@ -1,0 +1,21 @@
+{
+  "name": "rsa",
+  "version": "0.0.1",
+  "authors": [
+    "Pablo Vallejo <pabloninety@gmail.com>"
+  ],
+  "description": "Simple RSA implementation example",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1"
+  }
+}
