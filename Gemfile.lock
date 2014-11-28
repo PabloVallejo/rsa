@@ -39,7 +39,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    cryptify (0.0.2)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -147,7 +146,6 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  cryptify (~> 0.0.2)
   guard-livereload
   jbuilder (~> 2.0)
   jquery-rails

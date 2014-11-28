@@ -46,7 +46,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 # Cryptyfi RSA.
-gem 'cryptify', '~> 0.0.2'
+# gem 'cryptify', '~> 0.0.2'
 
 group :development do
   gem 'guard-livereload', require: false

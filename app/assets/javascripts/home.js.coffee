@@ -6,13 +6,14 @@ jQuery ->
 	$('.js-message').keyup ->
 			if not $(this).val().length then return
 
-			message = $(this).val()
-			rsaAttributes.message = message
+			data =
+				message: $('.js-message').val().split(',')
+				n: $('.js-n').val()
+				public_key: $('.js-public-key').val()
 
 			# Send post request.
 			$.post '/home/encrypt-decrypt',
-				rsaAttributes
+				data
 				(resp) ->
 					console.log resp
 					$('.js-decrypted').text(resp.decrypted)
-					$('.js-encrypted').text(resp.encrypted)

@@ -17,3 +17,6 @@
 
 # Ignore bower components.
 vendor/assets/components
+
+# Ignore prime numbers.
+/lib/primes

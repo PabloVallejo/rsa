@@ -19,14 +19,7 @@
       	<div class="col-sm-6 text-left">
 					<div class="form-group">
 						<h4>Message</h4>
-						<input type="text" class="js-message form-control input-lg">
-					</div>
-
-					<div class="form-group">
-						<div class="highlight">
-							<h4>Encripted</h4>
-							<h2 class="js-encrypted"></h2>
-						</div>
+						<textarea class="form-control js-message" name="" id="" cols="30" rows="10"></textarea>
 					</div>
 
 					<div class="form-group">
@@ -41,26 +34,21 @@
       	<div class="col-sm-6 text-right">
 
       		<div class="form-group">
-						<h4>Public keys</h4>
-						<h4>
-							e:
-							<span class="text-muted js-public-key-e"><%= @rsa.instance_variable_get('@e') %></span>
-						</h4>
-						<h4>
-							n: <span class="text-muted js-public-key-n"><%= @rsa.instance_variable_get('@n') %></span>
-						</h4>
-					</div>
 
-					<div class="form-group">
-						<h4>Relevant variables</h4>
-						<h4>
-							z: <span class="text-muted"><%= @rsa.instance_variable_get('@z') %></span>
-						</h4>
-						<h4>
-							d: <span class="text-muted"><%= @rsa.instance_variable_get('@d') %></span>
-						</h4>
+							<div class="form-group col-xs-6 pull-right">
+								<h4>Keys</h4>
+								<div class="highlight">
+									<label for="">n</label>
+									<input type="text" class="js-n col-sm-2 form-control">
+								</div>
+								<div class="highlight">
+									<label for="">Public Key</label>
+									<input type="text" class="js-public-key col-sm-2 form-control">
+								</div>
+							</div>
 
 					</div>
+
       	</div>
 
       </div>
@@ -74,12 +62,3 @@
     </div>
   </div>
 </div>
-
-<!-- Additional data -->
-<script>
-	var jsonString = '<%= @rsa.to_json.html_safe -%>';
-	var rsaAttributes;
-	if ( jsonString ) {
-		rsaAttributes = JSON.parse(jsonString);
-	}
-</script>

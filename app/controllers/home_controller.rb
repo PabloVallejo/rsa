@@ -12,23 +12,20 @@ class HomeController < ApplicationController
   # Encrypt message.
   #
   def encrypt_decrypt
-  	@rsa1 = Cryptify::Rsa.new
 
-  	# Set attributes.
-  	@rsa1.instance_variable_set(:@p, params[:p].to_i)
-  	@rsa1.instance_variable_set(:@q, params[:q].to_i)
-  	@rsa1.instance_variable_set(:@n, params[:n].to_i)
-  	@rsa1.instance_variable_set(:@z, params[:z].to_i)
-  	@rsa1.instance_variable_set(:@e, params[:e].to_i)
-  	@rsa1.instance_variable_set(:@d, params[:d].to_i)
+    @dec = Decoder.new
 
-  	# Encrypted and decrypted.
-  	encrypted = @rsa1.encrypt(params[:message].to_i)
-  	decrypted = @rsa1.decrypt(encrypted)
+    # Get attributes.
+    n = params[:n].to_i
+    public_key = params[:public_key].to_i
+    data = params[:message]
 
+    # Decode message.
+    decoded_message = @dec.decode_message(n, public_key, data)
+
+    # Feedback.
   	render json: {
-  		:encrypted => encrypted,
-  		:decrypted => decrypted,
+      :decrypted => decoded_message,
   	}
   end
 

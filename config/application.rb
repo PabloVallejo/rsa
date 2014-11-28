@@ -24,5 +24,9 @@ module Rsa
     # config.assets.paths << Rails.root.join('app', 'assets', 'bower_components')
     # config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
+    # Autoload `lib`.
+    config.autoload_paths << Rails.root.join('lib')
+
   end
 end
